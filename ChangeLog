@@ -1,3 +1,6 @@
+1-5-2003: Erwin Rol <erwin@muffin.org>
+	* better target power failure handling
+
 19-3-2003: Erwin Rol <erwin@muffin.org>
 	* fixed use of uninitilized lptbdm_port.sleep_time in mpc8xx_bdm_init
 	* fixed build bug ( could not find include files) of test application
