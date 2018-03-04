@@ -52,13 +52,13 @@ static short lptbdm_portadr[] =
 
 static uid_t lptbdm_euid = -1;
 
-#define INB(x,port)	asm volatile("inb %1, %0" : "=a" (x) : "d" (port))
-#define OUTB(x,port)	asm volatile("outb %0, %1" : : "a" (x), "d" (port))
+//#define INB(x,port)	asm volatile("inb %1, %0" : "=a" (x) : "d" (port))
+//#define OUTB(x,port)	asm volatile("outb %0, %1" : : "a" (x), "d" (port))
 
 /* in case of asm trouble (red hat 7.0?) try the code below and compile with -O option */
-/*#include <asm/io.h>
+#include <sys/io.h>
 #define INB(x,port)		x = inb(port)
-#define OUTB(x,port)	outb(x,port)*/
+#define OUTB(x,port)	outb(x,port)
 
 
 /* slow down host for not overrunning target */
