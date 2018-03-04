@@ -23,25 +23,25 @@ cflags=
 cppflags=
 cxxflags=\s-O3 -Wall
 ldadd=
-ldflags=\s  \s
+ldflags=\s       \s
 
 [General]
-AMChanged=true
+AMChanged=false
 author=Erwin Rol
-configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
+configure_args=
 email=erwin@muffin.org
 kdevprj_version=1.3
 lfv_open_groups=Headers
 make_options=\s-j1
-makefiles=Makefile.am,mpc8xx/Makefile.am,mpc8xx/docs/Makefile.am,mpc8xx/docs/en/Makefile.am,mpc8xx/libmpc8xx/Makefile.am
+makefiles=Makefile.am,mpc8xx/Makefile.am,mpc8xx/libmpc8xx/Makefile.am
 modifyMakefiles=true
 project_name=Mpc8xx
 project_type=normal_c
-sgml_file=/home/erwin/mpc8xx/mpc8xx/docs/en/index.sgml
+sgml_file=
 short_info=
 showNonProjectFiles=true
 sub_dir=mpc8xx/
-version=0.0.1
+version=0.0.2
 version_control=None
 workspace=1
 
@@ -58,7 +58,7 @@ kpp_icon=0
 kpp_license=5
 kpp_summary=
 kpp_url=
-kpp_version=0.0.1
+kpp_version=0.0.2
 
 [LFV Groups]
 GNU=AUTHORS,COPYING,ChangeLog,INSTALL,README,TODO,NEWS
@@ -110,63 +110,12 @@ type=DATA
 
 [mpc8xx/Makefile.am]
 files=mpc8xx/main.c
-sub_dirs=docs,libmpc8xx
+sub_dirs=libmpc8xx
 type=prog_main
-
-[mpc8xx/docs/Makefile.am]
-sub_dirs=en
-type=normal
-
-[mpc8xx/docs/en/Makefile.am]
-files=mpc8xx/docs/en/index.html,mpc8xx/docs/en/index-1.html,mpc8xx/docs/en/index-2.html,mpc8xx/docs/en/index-3.html,mpc8xx/docs/en/index-4.html,mpc8xx/docs/en/index-5.html,mpc8xx/docs/en/index-6.html
-sub_dirs=
-type=normal
-
-[mpc8xx/docs/en/index-1.html]
-dist=true
-install=false
-install_location=
-type=DATA
-
-[mpc8xx/docs/en/index-2.html]
-dist=true
-install=false
-install_location=
-type=DATA
-
-[mpc8xx/docs/en/index-3.html]
-dist=true
-install=false
-install_location=
-type=DATA
-
-[mpc8xx/docs/en/index-4.html]
-dist=true
-install=false
-install_location=
-type=DATA
-
-[mpc8xx/docs/en/index-5.html]
-dist=true
-install=false
-install_location=
-type=DATA
-
-[mpc8xx/docs/en/index-6.html]
-dist=true
-install=false
-install_location=
-type=DATA
-
-[mpc8xx/docs/en/index.html]
-dist=true
-install=false
-install_location=
-type=DATA
 
 [mpc8xx/libmpc8xx/Makefile.am]
 files=mpc8xx/libmpc8xx/lptbdm.c,mpc8xx/libmpc8xx/lptbdm.h,mpc8xx/libmpc8xx/mpc8xxbdm.c,mpc8xx/libmpc8xx/mpc8xxbdm.h,mpc8xx/libmpc8xx/mpc8xxflash.c,mpc8xx/libmpc8xx/mpc8xxflash.h,mpc8xx/libmpc8xx/mpc8xxmisc.c,mpc8xx/libmpc8xx/mpc8xxmisc.h,mpc8xx/libmpc8xx/mpc8xxspr.c,mpc8xx/libmpc8xx/mpc8xxspr.h,mpc8xx/libmpc8xx/mpc8xxtarget.c,mpc8xx/libmpc8xx/mpc8xxtarget.h,mpc8xx/libmpc8xx/mpc8xx.h,mpc8xx/libmpc8xx/mpc8xxmem.h,mpc8xx/libmpc8xx/mpc8xxmem.c
-sharedlib_LDFLAGS=-version-info 0:1:0
+sharedlib_LDFLAGS=-version-info 0:2:0
 sharedlib_rootname=mpc8xx
 sub_dirs=
 type=shared_library
@@ -180,13 +129,13 @@ type=SOURCE
 [mpc8xx/libmpc8xx/lptbdm.h]
 dist=true
 install=true
-install_location=$$(DESTDIR)$$(includedir)/mpc8xx/lptbdm.h
+install_location=$$(includedir)/mpc8xx/lptbdm.h
 type=HEADER
 
 [mpc8xx/libmpc8xx/mpc8xx.h]
 dist=true
 install=true
-install_location=$$(DESTDIR)$$(includedir)/mpc8xx.h
+install_location=$$(includedir)/mpc8xx.h
 type=HEADER
 
 [mpc8xx/libmpc8xx/mpc8xxbdm.c]
@@ -198,7 +147,7 @@ type=SOURCE
 [mpc8xx/libmpc8xx/mpc8xxbdm.h]
 dist=true
 install=true
-install_location=$$(DESTDIR)$$(includedir)/mpc8xx/mpc8xxbdm.h
+install_location=$$(includedir)/mpc8xx/mpc8xxbdm.h
 type=HEADER
 
 [mpc8xx/libmpc8xx/mpc8xxflash.c]
@@ -210,7 +159,7 @@ type=SOURCE
 [mpc8xx/libmpc8xx/mpc8xxflash.h]
 dist=true
 install=true
-install_location=$$(DESTDIR)$$(includedir)/mpc8xx/mpc8xxflash.h
+install_location=$$(includedir)/mpc8xx/mpc8xxflash.h
 type=HEADER
 
 [mpc8xx/libmpc8xx/mpc8xxmem.c]
@@ -222,7 +171,7 @@ type=SOURCE
 [mpc8xx/libmpc8xx/mpc8xxmem.h]
 dist=true
 install=true
-install_location=$$(DESTDIR)$$(includedir)/mpc8xx/mpc8xxmem.h
+install_location=$$(includedir)/mpc8xx/mpc8xxmem.h
 type=HEADER
 
 [mpc8xx/libmpc8xx/mpc8xxmisc.c]
@@ -234,7 +183,7 @@ type=SOURCE
 [mpc8xx/libmpc8xx/mpc8xxmisc.h]
 dist=true
 install=true
-install_location=$$(DESTDIR)$$(includedir)/mpc8xx/mpc8xxmisc.h
+install_location=$$(includedir)/mpc8xx/mpc8xxmisc.h
 type=HEADER
 
 [mpc8xx/libmpc8xx/mpc8xxspr.c]
@@ -246,7 +195,7 @@ type=SOURCE
 [mpc8xx/libmpc8xx/mpc8xxspr.h]
 dist=true
 install=true
-install_location=$$(DESTDIR)$$(includedir)/mpc8xx/mpc8xxspr.h
+install_location=$$(includedir)/mpc8xx/mpc8xxspr.h
 type=HEADER
 
 [mpc8xx/libmpc8xx/mpc8xxtarget.c]
@@ -258,7 +207,7 @@ type=SOURCE
 [mpc8xx/libmpc8xx/mpc8xxtarget.h]
 dist=true
 install=true
-install_location=$$(DESTDIR)$$(includedir)/mpc8xx/mpc8xxtarget.h
+install_location=$$(includedir)/mpc8xx/mpc8xxtarget.h
 type=HEADER
 
 [mpc8xx/main.c]

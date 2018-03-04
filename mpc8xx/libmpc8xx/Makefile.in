@@ -253,7 +253,7 @@ INCLUDES = $(all_includes)
 
 LDFLAGS = 
 
-libmpc8xx_la_LDFLAGS = -version-info 0:1:0
+libmpc8xx_la_LDFLAGS = -version-info 0:2:0
 
 #>- libmpc8xx_la_METASOURCES = AUTO
 
@@ -321,7 +321,7 @@ $(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
 #>+ 3
 	cd $(top_srcdir) && \
 	  $(AUTOMAKE) --gnu  mpc8xx/libmpc8xx/Makefile
-	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.1/mpc8xx/libmpc8xx/Makefile.in
+	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.2/mpc8xx/libmpc8xx/Makefile.in
 Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
 libLTLIBRARIES_INSTALL = $(INSTALL)
@@ -549,31 +549,79 @@ uninstall-am: uninstall-info-am uninstall-libLTLIBRARIES uninstall-local
 
 
 install-data-local:
+#>- 	$(mkinstalldirs) $(includedir)/mpc8xx/
+#>+ 1
 	$(mkinstalldirs) $(DESTDIR)$(includedir)/mpc8xx/
+#>- 	$(INSTALL_DATA) $(srcdir)/lptbdm.h $(includedir)/mpc8xx/lptbdm.h
+#>+ 1
 	$(INSTALL_DATA) $(srcdir)/lptbdm.h $(DESTDIR)$(includedir)/mpc8xx/lptbdm.h
+#>- 	$(mkinstalldirs) $(includedir)/mpc8xx/
+#>+ 1
 	$(mkinstalldirs) $(DESTDIR)$(includedir)/mpc8xx/
+#>- 	$(INSTALL_DATA) $(srcdir)/mpc8xxbdm.h $(includedir)/mpc8xx/mpc8xxbdm.h
+#>+ 1
 	$(INSTALL_DATA) $(srcdir)/mpc8xxbdm.h $(DESTDIR)$(includedir)/mpc8xx/mpc8xxbdm.h
+#>- 	$(mkinstalldirs) $(includedir)/mpc8xx/
+#>+ 1
 	$(mkinstalldirs) $(DESTDIR)$(includedir)/mpc8xx/
+#>- 	$(INSTALL_DATA) $(srcdir)/mpc8xxflash.h $(includedir)/mpc8xx/mpc8xxflash.h
+#>+ 1
 	$(INSTALL_DATA) $(srcdir)/mpc8xxflash.h $(DESTDIR)$(includedir)/mpc8xx/mpc8xxflash.h
+#>- 	$(mkinstalldirs) $(includedir)/mpc8xx/
+#>+ 1
 	$(mkinstalldirs) $(DESTDIR)$(includedir)/mpc8xx/
+#>- 	$(INSTALL_DATA) $(srcdir)/mpc8xxmisc.h $(includedir)/mpc8xx/mpc8xxmisc.h
+#>+ 1
 	$(INSTALL_DATA) $(srcdir)/mpc8xxmisc.h $(DESTDIR)$(includedir)/mpc8xx/mpc8xxmisc.h
+#>- 	$(mkinstalldirs) $(includedir)/mpc8xx/
+#>+ 1
 	$(mkinstalldirs) $(DESTDIR)$(includedir)/mpc8xx/
+#>- 	$(INSTALL_DATA) $(srcdir)/mpc8xxspr.h $(includedir)/mpc8xx/mpc8xxspr.h
+#>+ 1
 	$(INSTALL_DATA) $(srcdir)/mpc8xxspr.h $(DESTDIR)$(includedir)/mpc8xx/mpc8xxspr.h
+#>- 	$(mkinstalldirs) $(includedir)/mpc8xx/
+#>+ 1
 	$(mkinstalldirs) $(DESTDIR)$(includedir)/mpc8xx/
+#>- 	$(INSTALL_DATA) $(srcdir)/mpc8xxtarget.h $(includedir)/mpc8xx/mpc8xxtarget.h
+#>+ 1
 	$(INSTALL_DATA) $(srcdir)/mpc8xxtarget.h $(DESTDIR)$(includedir)/mpc8xx/mpc8xxtarget.h
+#>- 	$(mkinstalldirs) $(includedir)/
+#>+ 1
 	$(mkinstalldirs) $(DESTDIR)$(includedir)/
+#>- 	$(INSTALL_DATA) $(srcdir)/mpc8xx.h $(includedir)/mpc8xx.h
+#>+ 1
 	$(INSTALL_DATA) $(srcdir)/mpc8xx.h $(DESTDIR)$(includedir)/mpc8xx.h
+#>- 	$(mkinstalldirs) $(includedir)/mpc8xx/
+#>+ 1
 	$(mkinstalldirs) $(DESTDIR)$(includedir)/mpc8xx/
+#>- 	$(INSTALL_DATA) $(srcdir)/mpc8xxmem.h $(includedir)/mpc8xx/mpc8xxmem.h
+#>+ 1
 	$(INSTALL_DATA) $(srcdir)/mpc8xxmem.h $(DESTDIR)$(includedir)/mpc8xx/mpc8xxmem.h
 
 uninstall-local:
+#>- 	-rm -f $(includedir)/mpc8xx/lptbdm.h
+#>+ 1
 	-rm -f $(DESTDIR)$(includedir)/mpc8xx/lptbdm.h
+#>- 	-rm -f $(includedir)/mpc8xx/mpc8xxbdm.h
+#>+ 1
 	-rm -f $(DESTDIR)$(includedir)/mpc8xx/mpc8xxbdm.h
+#>- 	-rm -f $(includedir)/mpc8xx/mpc8xxflash.h
+#>+ 1
 	-rm -f $(DESTDIR)$(includedir)/mpc8xx/mpc8xxflash.h
+#>- 	-rm -f $(includedir)/mpc8xx/mpc8xxmisc.h
+#>+ 1
 	-rm -f $(DESTDIR)$(includedir)/mpc8xx/mpc8xxmisc.h
+#>- 	-rm -f $(includedir)/mpc8xx/mpc8xxspr.h
+#>+ 1
 	-rm -f $(DESTDIR)$(includedir)/mpc8xx/mpc8xxspr.h
+#>- 	-rm -f $(includedir)/mpc8xx/mpc8xxtarget.h
+#>+ 1
 	-rm -f $(DESTDIR)$(includedir)/mpc8xx/mpc8xxtarget.h
+#>- 	-rm -f $(includedir)/mpc8xx.h
+#>+ 1
 	-rm -f $(DESTDIR)$(includedir)/mpc8xx.h
+#>- 	-rm -f $(includedir)/mpc8xx/mpc8xxmem.h
+#>+ 1
 	-rm -f $(DESTDIR)$(includedir)/mpc8xx/mpc8xxmem.h
 
 ####### kdevelop will overwrite this part!!! (end)############
@@ -589,7 +637,7 @@ docs-am:
 force-reedit:
 		cd $(top_srcdir) && \
 	  $(AUTOMAKE) --gnu  mpc8xx/libmpc8xx/Makefile
-	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.1/mpc8xx/libmpc8xx/Makefile.in
+	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.2/mpc8xx/libmpc8xx/Makefile.in
 
 
 #>+ 2

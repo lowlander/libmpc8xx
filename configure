@@ -1904,7 +1904,7 @@ fi
 
 # Define the identity of the package.
  PACKAGE=mpc8xx
- VERSION=0.0.1
+ VERSION=0.0.2
 
 
 cat >>confdefs.h <<_ACEOF
@@ -24945,10 +24945,6 @@ ac_config_files="$ac_config_files Makefile"
 
 ac_config_files="$ac_config_files mpc8xx/Makefile"
 
-ac_config_files="$ac_config_files mpc8xx/docs/Makefile"
-
-ac_config_files="$ac_config_files mpc8xx/docs/en/Makefile"
-
 ac_config_files="$ac_config_files mpc8xx/libmpc8xx/Makefile"
 
 cat >confcache <<\_ACEOF
@@ -25441,8 +25437,6 @@ do
   # Handling of arguments.
   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
   "mpc8xx/Makefile" ) CONFIG_FILES="$CONFIG_FILES mpc8xx/Makefile" ;;
-  "mpc8xx/docs/Makefile" ) CONFIG_FILES="$CONFIG_FILES mpc8xx/docs/Makefile" ;;
-  "mpc8xx/docs/en/Makefile" ) CONFIG_FILES="$CONFIG_FILES mpc8xx/docs/en/Makefile" ;;
   "mpc8xx/libmpc8xx/Makefile" ) CONFIG_FILES="$CONFIG_FILES mpc8xx/libmpc8xx/Makefile" ;;
   "depfiles" ) CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
   "config.h" ) CONFIG_HEADERS="$CONFIG_HEADERS config.h" ;;

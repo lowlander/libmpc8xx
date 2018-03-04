@@ -19,7 +19,13 @@
 #include <config.h>
 #endif
 
-#include "mpc8xx.h"
+#include "lptbdm.h"
+#include "mpc8xxbdm.h"
+#include "mpc8xxflash.h"
+#include "mpc8xxmisc.h"
+#include "mpc8xxspr.h"
+#include "mpc8xxtarget.h"
+#include "mpc8xxmem.h"
 
 #include <stdio.h>
 #include <stdlib.h>

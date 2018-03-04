@@ -291,7 +291,7 @@ $(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
 #>+ 3
 	cd $(top_srcdir) && \
 	  $(AUTOMAKE) --foreign  Makefile
-	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.1/Makefile.in
+	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.2/Makefile.in
 Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
 	cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)
 
@@ -652,7 +652,7 @@ docs-am:
 force-reedit:
 		cd $(top_srcdir) && \
 	  $(AUTOMAKE) --foreign  Makefile
-	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.1/Makefile.in
+	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.2/Makefile.in
 
 
 #>+ 2

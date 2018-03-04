@@ -273,7 +273,11 @@ int mpc8xx_bdm_init( int lpt_port, int adapter_version, int power_on )
 
 	mpc8xx_printf( "disabled power at port %d\n", lptbdm_port.port );
 
-	lptbdm_sleep( lptbdm_port.sleep_time ); /* allow changes on port lines */
+	/*
+	 * allow changes on port lines, use a hardcoded value here
+	 * since the timeouts aren't configured yet.
+	 */
+	lptbdm_sleep( 100000 ); /*  */
 
 	/*
 	 * Removed the buggy auto detection, default is adapter version 2.
@@ -413,7 +417,7 @@ int mpc8xx_bdm_wait_freeze( int timeout )
 		mpc8xx_printf( "mpc8xx_bdm_wait_freeze:\n" );
 	}
 
-	while( !( lptbdm_port.read( ) & lptbdm_port.FREEZE) )
+	while( !( ( lptbdm_port.read( ) & lptbdm_port.FREEZE ) == lptbdm_port.FREEZE ) )
 	{
 		lptbdm_sleep( lptbdm_port.sleep_time );
 
@@ -513,7 +517,7 @@ int mpc8xx_bdm_clk_serial( const bdm_in_t* in, bdm_out_t* out )
 	/* clear out */
 	memset( out, 0 , sizeof(bdm_out_t) );
 
-	if( lptbdm_port.read( ) & lptbdm_port.FREEZE )
+	if( ( lptbdm_port.read( ) & lptbdm_port.FREEZE ) == lptbdm_port.FREEZE )
 	{
 		if( mpc8xx_bdm_wait_ready( 2 ) < 0 )
 			return -1;

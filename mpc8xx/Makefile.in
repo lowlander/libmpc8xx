@@ -252,7 +252,7 @@ bin_PROGRAMS = mpc8xx
 mpc8xx_SOURCES = main.c 
 mpc8xx_LDADD = ./libmpc8xx/libmpc8xx.la 
 
-SUBDIRS = docs libmpc8xx 
+SUBDIRS = libmpc8xx 
 
 EXTRA_DIST = main.c 
 
@@ -262,6 +262,8 @@ INCLUDES = $(all_includes)
 
 # the library search path.
 mpc8xx_LDFLAGS = $(all_libraries) 
+
+CFLAGS := -I./libmpc8xx/
 subdir = mpc8xx
 mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
 CONFIG_HEADER = $(top_builddir)/config.h
@@ -293,7 +295,6 @@ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
 CCLD = $(CC)
 LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-CFLAGS = @CFLAGS@
 DIST_SOURCES = $(mpc8xx_SOURCES)
 
 RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
@@ -316,7 +317,7 @@ $(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
 #>+ 3
 	cd $(top_srcdir) && \
 	  $(AUTOMAKE) --gnu  mpc8xx/Makefile
-	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.1/mpc8xx/Makefile.in
+	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.2/mpc8xx/Makefile.in
 Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
@@ -487,12 +488,7 @@ GTAGS:
 
 distclean-tags:
 	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
-#>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-#>+ 4
-KDE_DIST=mpc8xx 
-
-DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
-
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 
 top_distdir = ..
 distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
@@ -633,7 +629,7 @@ docs-am:
 force-reedit:
 		cd $(top_srcdir) && \
 	  $(AUTOMAKE) --gnu  mpc8xx/Makefile
-	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.1/mpc8xx/Makefile.in
+	cd $(top_srcdir) && perl admin/am_edit mpc8xx-0.0.2/mpc8xx/Makefile.in
 
 
 #>+ 2

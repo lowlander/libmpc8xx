@@ -38,7 +38,7 @@ dnl Perform program name transformation
 AC_ARG_PROGRAM
 
 dnl Automake doc recommends to do this only here. (Janos)
-AM_INIT_AUTOMAKE(mpc8xx,0.0.1)
+AM_INIT_AUTOMAKE(mpc8xx,0.0.2)
 
 dnl almost the same like KDE_SET_PEFIX but the path is /usr/local
 dnl
@@ -95,8 +95,6 @@ AC_SUBST(AUTODIRS)
 KDE_CREATE_SUBDIRSLIST
 AC_CONFIG_FILES([ Makefile ])
 AC_CONFIG_FILES([ mpc8xx/Makefile ])
-AC_CONFIG_FILES([ mpc8xx/docs/Makefile ])
-AC_CONFIG_FILES([ mpc8xx/docs/en/Makefile ])
 AC_CONFIG_FILES([ mpc8xx/libmpc8xx/Makefile ])
 AC_OUTPUT
 if test "$all_tests" = "bad"; then
